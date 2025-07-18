@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mongodb-service
+  namespace: mongodb-ui
+  labels:
+    app: mongodb
+spec:
+  selector:
+    app: mongodb
+  clusterIP: None
+  ports:
+    - name: mongodb-port
+      port: 27017
+      targetPort: 27017
+      protocol: TCP
